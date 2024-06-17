@@ -20,7 +20,7 @@ export const SocketContextProvider = ({children})=>{
 
     useEffect(()=>{
         if(userEmail){
-            const socket = io("http://localhost:3000",{
+            const socket = io("https://chatapplication-8eox.onrender.com",{
                 query:{
                     userId: userIdentity
                 },

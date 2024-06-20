@@ -5,15 +5,25 @@ import cors from 'cors';
 
 const app = express();
 
+const allowedOrigins = ["https://chatapplication-8eox.onrender.com"];
+const corsOptions = {
+    origin: allowedOrigins,
+    methods: ["GET", "POST"],
+    credentials: true // If your requests include credentials (cookies, authorization headers, etc.)
+};
+app.use(cors(corsOptions))
+
 const server = http.createServer(app);
 const io = new Server(server,{
     cors: {
-        origin: ["https://chatapplication-8eox.onrender.com"],
+        origin: allowedOrigins,
         // origin: ["http://localhost:5173","https://chatapplication-8eox.onrender.com"],
-        methods: ["GET","POST"]
+        methods: ["GET","POST"],
+        credentials:true
+
     }
 })
-app.use(cors());
+// app.use(cors());
 
 export const getReceiverSocketId = (receiverId)=>{
     return userSocketMap[receiverId];

@@ -28,7 +28,7 @@ function Signup(){
             password: password
         }
 
-        axios.post('http://localhost:3000/user/signup',newSignup).then(response=>{
+        axios.post('https://chatapplication-8eox.onrender.com/user/signup',newSignup).then(response=>{
             localStorage.setItem('token',response.data.token);
             setUser({
                 isLoading:false,

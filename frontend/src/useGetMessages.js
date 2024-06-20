@@ -12,7 +12,7 @@ const useGetMessages = ()=>{
             setLoading(true);
             try {
                 console.log("123")
-                const response = await axios.get(`http://localhost:3000/message/${selectedConversation._id}`,{
+                const response = await axios.get(`https://chatapplication-8eox.onrender.com/message/${selectedConversation._id}`,{
                     headers: {
                         "Authorization": "Bearer " + localStorage.getItem("token")
                     }

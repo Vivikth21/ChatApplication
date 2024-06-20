@@ -33,7 +33,7 @@ function InitUser(){
   const setUser = useSetRecoilState(userState)
   const init = async()=>{
     try{
-        const response = await axios.get('http://localhost:3000/allUsers/me', {
+        const response = await axios.get('https://chatapplication-8eox.onrender.com/allUsers/me', {
           headers: {
               "Authorization": "Bearer " + localStorage.getItem("token")
           }

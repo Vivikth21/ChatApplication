@@ -9,7 +9,7 @@ const useGetConversations = ()=> {
         const getConversations = async()=>{
             setLoading(true)
             try {
-                const response = await axios.get('http://localhost:3000/allUsers',{
+                const response = await axios.get('https://chatapplication-8eox.onrender.com/allUsers',{
                     headers:{
                         "Authorization": "Bearer " + localStorage.getItem("token")
                     }

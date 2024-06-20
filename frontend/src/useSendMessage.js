@@ -15,7 +15,7 @@ const useSendMessage = () => {
 		try {
 
             console.log(JSON.stringify(message));
-            const response = await axios.post(`http://localhost:3000/message/send/${selectedConversation._id}`,{message},{
+            const response = await axios.post(`https://chatapplication-8eox.onrender.com/message/send/${selectedConversation._id}`,{message},{
                 headers: {
                     "Authorization": "Bearer " + localStorage.getItem("token")
                 }
